@@ -4,7 +4,6 @@ import { useState } from "react";
 import { ThemeProvider, FormGroup, FormLabel, FormControl, FormControlLabel, RadioGroup, Radio, Container, Grid, Stack, Typography, Toolbar, AppBar, Button, CssBaseline, Checkbox} from "@mui/material";
 import { darkTheme } from "./theme";
 import SneakerCard from "./components/SneakerCard"
-//import CartItem from "./components/Cart"
 import sneakerData from "./assets/data.json";
 
 
@@ -21,7 +20,6 @@ function App() {
   const [colored, setColored] = useState(true);  
   const [sortDirection, setSortDirection] = useState("low-to-high");
   const [cartFilter, setCartFilter] = useState(false); 
-  //const [data, setData] = useState(sneakerData);
   
   const alterCart = (item) => {
     const cartArr = [...cart]
@@ -129,7 +127,6 @@ function App() {
   }
 
    const filteredData = sneakerData.filter(matchesFilterType);
-   //const filteredData2 = filteredData.filter(inCart);  
    const sortedData = filteredData.sort(matchesSortDirection);
   
   return (
@@ -186,18 +183,12 @@ function App() {
             <FormControl>
               <FormLabel><h3>Other</h3></FormLabel>
               <FormGroup>
-              {/* // defaultValue="false" onChange={onHandleChangeCart}> */}
                 <FormControlLabel 
                 value="false"
                 control={<Checkbox checked={cartFilter} onChange={onHandleChangeCart} />}  
                 label="Cart" />
-                {/* <FormControlLabel 
-                value = "false"
-                control={<Radio/>}  
-                label="Not In Cart" /> */}
               </FormGroup>
               <div style={{textAlign:"left"}}>
-                {/* {cart.map((count, index) => count? <CartItem cartItem = {sortedData[index]} count = {count}/> :<></>)} */}
                 Total = $
                 {(cart.reduce((a,b,index) => {return a + b*sneakerData[index].price},0)).toFixed(2)}
               </div>  
@@ -224,7 +215,7 @@ function App() {
           </Grid>
           <Grid item xs={8} sm={9} md={10}>
            <Grid container display="flex" justifycontent="center" alignitems="center">
-            {sortedData.map((item) => ( // TODO: map bakeryData to BakeryItem components
+            {sortedData.map((item) => ( 
               <SneakerCard item = {item} key={item.number} alterCart = {alterCart}/> 
             ))}
            </Grid>

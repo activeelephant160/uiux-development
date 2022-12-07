@@ -4,8 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { alignProperty } from '@mui/material/styles/cssUtils';
 
 function SneakerCard(props) {
   const item = props.item;
@@ -26,7 +24,6 @@ function SneakerCard(props) {
           <h3>Number in Cart: {item.inCart} </h3>
           <CardActions>
               <Button size="small" variant="contained" onClick={() => props.alterCart(item)}> {item.buttonText} </Button>
-              {/* <button onClick={() => props.addToCart(props.index)}>Add to Cart</button> */}
           </CardActions>
         </div>
       </CardContent>
