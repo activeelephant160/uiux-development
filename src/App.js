@@ -114,17 +114,7 @@ function App() {
       return false;
     }
   }
-  
-  // const notInCart = item => {
-  //   if (cartFilter === false){
-  //     return true;
-  //   }
-  //   else{
-  //     return true;
-  //   }
-  // }
-
-
+ 
   const matchesFilterType = item => {
     return (matchesHighTop(item) || matchesLowTop(item)) && (matchesPlainWhite(item) || matchesColored(item)) || inCart(item) 
   }
@@ -158,11 +148,12 @@ function App() {
           <h2>Add sneakers to your cart!</h2>
         </Stack>
         <Container>
-        <Grid container >
+        <Grid container spacing={2}>
           <Grid item xs={4} sm={3} md={2}>
           <Stack>
             <FormControl>
-              <FormLabel>Type</FormLabel>
+            <Typography variant="p" sx={{ flexGrow: 1, textAlign:"left"}}>Play around with the filters to find your perfect sneaker!</Typography>
+              <FormLabel><h3>Type</h3></FormLabel>
               <FormGroup> 
                 <FormControlLabel 
                 value="Low-Top" 
@@ -178,7 +169,7 @@ function App() {
           </Stack>
           <Stack>
             <FormControl>
-              <FormLabel>Color</FormLabel>
+              <FormLabel><h3>Color</h3></FormLabel>
               <FormGroup>
                 <FormControlLabel 
                 value="Plain-White" 
@@ -193,7 +184,7 @@ function App() {
           </Stack>
           <Stack>
             <FormControl>
-              <FormLabel>Other</FormLabel>
+              <FormLabel><h3>Other</h3></FormLabel>
               <FormGroup>
               {/* // defaultValue="false" onChange={onHandleChangeCart}> */}
                 <FormControlLabel 
@@ -214,7 +205,7 @@ function App() {
           </Stack>
           <Stack>
           <FormControl>
-              <FormLabel>Sort By Price</FormLabel>
+              <FormLabel><h3>Sort by Price</h3></FormLabel>
               <RadioGroup defaultValue="low-to-high" onChange={onHandleChangeDirection}>
                 <FormControlLabel 
                 value="low-to-high" 
@@ -226,6 +217,9 @@ function App() {
                 label="High-To-Low" />
               </RadioGroup>
             </FormControl>
+          </Stack>
+          <Stack sx={{marginTop:"0.5rem"}}>
+            <Typography variant="p" sx={{ flexGrow: 1, textAlign:"left"}}>But make sure one filter of Type and Color are selected at all times :) </Typography>
           </Stack>
           </Grid>
           <Grid item xs={8} sm={9} md={10}>
