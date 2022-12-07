@@ -12,6 +12,7 @@ sneakerData.forEach((item) => {
   item.image = process.env.PUBLIC_URL + "/" + item.image;
 });
 
+
 function App() {
 
   const [cart, setCart] = useState(Array(sneakerData.length).fill(0));
@@ -238,9 +239,8 @@ function App() {
         </Grid>
         </Container>
       </Stack>
-    </ThemeProvider>
+    </ThemeProvider>      
     </div>
   );
 }
-
 export default App;
