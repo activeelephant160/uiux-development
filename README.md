@@ -14,10 +14,10 @@ Design and Layout: The website is comprehensible at first site. The checkbox and
 Visibility: The functions of the website are very clear and the user understands their possibilities. The description about how the filters work provide clear direction and are self-explanatory. 
 
 ### Organization of Components
-I created a SneakerCard component that holds each item card with all the appropriate information like Sneaker type (High Top or Low Top), brand (Adidas, Nike, Veja etc), color (white or any colors) etc. It creates the structure of the card and uses props to identify each property from the data.json file. The SneakerCard component is passed to App.js. 
+I created a SneakerCard component that holds each Item Card's structure with all the appropriate information like Sneaker type (High Top or Low Top), brand (Adidas, Nike, Veja etc), color (white or any colors) etc. It creates the structure of the card and uses props to identify each property from the data.json file. The SneakerCard component is passed to App.js. 
 
 ### How Data is Passed Down Through Components
-
+Information for each Item Card is stored in "data.json." Apart from information visible on the card, it also keeps track of whether the Sneaker pair has been added to the Cart and the text the Button should display accordingly. This is passed down to App.js and undergoes the filter and sorting function before it can be mapped to the SneakerCart component. 
 
 
 ### How the User Triggers State Changes
